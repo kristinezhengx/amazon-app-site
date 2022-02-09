@@ -1,9 +1,9 @@
 site_name: TigerGraph Full Stack Course with Flutter and Firebase
 
 # Repository
-repo_name: mckenzie-steenson/amazonProductApp
+repo_name: mckenzie-steenson/amazon-app
 
-repo_url: https://github.com/mckenzie-steenson/amazonProductApp
+repo_url: https://github.com/mckenzie-steenson/amazon-app
 edit_uri: ""
 # Configuration
 theme:
@@ -78,5 +78,11 @@ extra:
 # Page tree
 nav:
   - Home: index.md
+  - Environment Setup: env.md
+  - TigerGraph Cloud: tgcloud.md
+  - Middleware: middleware.md
+  - Frontend: frontend.md
+  - Conclusion: conclusion.md
+
 
 
