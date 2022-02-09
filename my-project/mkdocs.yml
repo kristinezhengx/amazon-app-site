@@ -80,7 +80,14 @@ nav:
   - Environment Setup: env.md
   - TigerGraph Cloud: tgcloud.md
   - Middleware: middleware.md
-  - Frontend: frontend.md
+  - Frontend:
+    - 'Before We Get Started': 'frontend_pages/01_before.md'
+    - 'Dependency Changes': 'frontend_pages/02_dependency.md'
+    - 'Exploring Flutter Fundamentals': 'frontend_pages/03_exploring.md'
+    - 'Laying Down the Groundwork': 'frontend_pages/04_laying.md'
+    - 'Navigation': 'frontend_pages/05_navigation.md'
+    - 'Adding to the Intro Page': 'frontend_pages/06_adding.md'
+    - 'TigerGraph Functionality': 'frontend_pages/07_tigergraph.md'
   - Conclusion: conclusion.md
 
 

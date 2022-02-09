@@ -84,7 +84,7 @@ For the middleware, we will be using pyTigerGraph, FastAPI, and a library called
 $ pip install pyTigerGraph fastapi uvicorn
 ```
 
-**[What is FastAPI?](https://fastapi.tiangolo.com/)**
+*[What is FastAPI?](https://fastapi.tiangolo.com/)*
 
 ### FastAPI Setup
 
