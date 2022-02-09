@@ -7,7 +7,7 @@ repo_url: https://github.com/mckenzie-steenson/amazon-app
 edit_uri: ""
 # Configuration
 theme:
-  name: mkdocs
+  name: material
   features:
     - navigation.instant
     - navigation.tracking
