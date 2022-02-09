@@ -46,7 +46,8 @@ This launches the application using the development compiler in the Chrome brows
 
 Requirements
 
-* Python
+* [Python](https://www.python.org/downloads/)
+* [pip](https://pip.pypa.io/en/stable/installation/)
 
 ## Create Middleware Directory
 
@@ -74,16 +75,48 @@ $ source venv/bin/activate
 ```
 
 There should now be (venv) in front of your terminal after activating the virtual environment. 
+
 ### Install Packages
 
+For the middleware, we will be using pyTigerGraph, FastAPI, and a library called uvicorn that is used by FastAPI
+
+```
+$ pip install pyTigerGraph fastapi uvicorn
+```
+
+**[What is FastAPI?](https://fastapi.tiangolo.com/)**
 
 ### FastAPI Setup
 
+Open the `my-project` directory in VS Code or your editor of choice, open the `middleware` folder, and create a file called `main.py` inside of it.
+
+Click into `main.py` and use code from FastAPI in that file.
+
+```python
+from typing import Optional
+from fastapi import FastAPI
+
+app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+```
+
 ### Run the API
+
+Save `main.py`, open an integrated terminal in VS Code, and run the following command to run the API.
+
+```
+$ uvicorn main:app --reload
+```
+
+This is using uvicorn to run our file. The file name is `main` and the `--reload` has the server automatically relaod after new changes are saved to the `main.py` file.
 
 ### Explore the Endpoints
 
+Now it's time to check out the endpoints that were just created! Enter [https://127.0.0.1:8000](https://127.0.0.1:8000) in a browser page, and here you should find the {“Hello”: “World”} from the first function in the main.py file
 
+Enter [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) or [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc) to find interactive documentation for the endpoints we created. Thanks fastAPI!
 
 We will learn how to connect to our TigerGraph solution in the [Middleware](middleware.md) section.
 
@@ -92,3 +125,9 @@ We will learn how to connect to our TigerGraph solution in the [Middleware](midd
 
 
 ## The Data
+
+Our data is coming from [data.world](https://data.world/)
+
+The original dataset: [Consumer reviews of Amazon products](https://data.world/datafiniti/consumer-reviews-of-amazon-products)
+
+Manipulated data to fit our purposes can be found **HERE** inlcude link to data in github repo!!!
