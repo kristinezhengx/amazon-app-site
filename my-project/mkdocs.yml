@@ -85,6 +85,7 @@ extra:
 # Page tree
 nav:
   - Home: index.md
+  - Software setup: setup.md
   - Environment Setup: env.md
   - TigerGraph Cloud: tgcloud.md
   - Middleware: middleware.md
