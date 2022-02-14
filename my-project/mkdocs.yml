@@ -1,13 +1,13 @@
 site_name: TigerGraph Full Stack Course with Flutter and Firebase
 
 # Repository
-repo_name: mckenzie-steenson/amazonProductApp
+repo_name: mckenzie-steenson/amazon-app
 
-repo_url: https://github.com/mckenzie-steenson/amazonProductApp
+repo_url: https://github.com/mckenzie-steenson/amazon-app
 edit_uri: ""
 # Configuration
 theme:
-  name: mkdocs
+  name: material
   features:
     - navigation.instant
     - navigation.tracking
@@ -49,8 +49,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/favicon.png
-  icon:
-    logo: logo
+  logo: assets/favicon.png
 
 # Plugins
 plugins:
@@ -78,5 +77,18 @@ extra:
 # Page tree
 nav:
   - Home: index.md
+  - Environment Setup: env.md
+  - TigerGraph Cloud: tgcloud.md
+  - Middleware: middleware.md
+  - Frontend:
+    - 'Before We Get Started': 'frontend_pages/01_before.md'
+    - 'Dependency Changes': 'frontend_pages/02_dependency.md'
+    - 'Exploring Flutter Fundamentals': 'frontend_pages/03_exploring.md'
+    - 'Laying Down the Groundwork': 'frontend_pages/04_laying.md'
+    - 'Navigation': 'frontend_pages/05_navigation.md'
+    - 'Adding to the Intro Page': 'frontend_pages/06_adding.md'
+    - 'TigerGraph Functionality': 'frontend_pages/07_tigergraph.md'
+  - Conclusion: conclusion.md
+
 
 
