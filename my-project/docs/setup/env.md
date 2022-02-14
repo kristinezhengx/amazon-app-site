@@ -122,12 +122,18 @@ We will learn how to connect to our TigerGraph solution in the [Middleware](midd
 
 ## TigerGraph Cloud
 
+### Create your Solution:
 
+Navigate to [TigerGraph Cloud] and create an account if you haven't already.
 
-## The Data
+Once logged in, navigate to the "My Solutions" tab. Next, press the blue "Create Solution" button.
 
-Our data is coming from [data.world](https://data.world/)
+We will using a blank starter kit!
 
-The original dataset: [Consumer reviews of Amazon products](https://data.world/datafiniti/consumer-reviews-of-amazon-products)
+The rest of the settings will not need to be changed, scroll down, and press "Next".
 
-Manipulated data to fit our purposes can be found **HERE** inlcude link to data in github repo!!!
+Customize the third page best to best describe your graph. Keep note of and maybe write down your password and subdomain. We will need these later when using pyTigerGraph. Once you are satisfied with your Solution Settings, press "Next".
+
+Review your options on the final page, and if all looks good, press "Submit".
+
+It may take a few minutes for your solution to be ready to start. You can check the status of your solution by pressing "Pending Tasks" in the top right corner of your screen. And once the solution is ready, you can click the four squares under "Actions" and open TigerGraph Studio to begin building your TigerGraph Solution!
