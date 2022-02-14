@@ -230,4 +230,17 @@ JSON parsing in Flutter was the most difficult concept for me to grasp, so below
 -   [Background Parsing](https://docs.flutter.dev/cookbook/networking/background-parsing)
 -   [Dart Flutter Parse JSON String Array to Object List](https://www.bezkoder.com/dart-flutter-parse-json-string-array-to-object-list/)
 
+Here are a few example inputs from our data that you cna use to test out the app output:
+
+User IDs:
+
+-   Richard
+-   Nash
+-   nan2016
+
+Product IDs:
+
+-   AVqVGZNvQMlgsOJE6eUY
+-   AVqVGWLKnnc1JgDc3jF1
+
 Now follow the code provided to add the product search and product recommendation for the product page.
