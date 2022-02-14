@@ -90,5 +90,8 @@ nav:
     - 'TigerGraph Functionality': 'frontend_pages/07_tigergraph.md'
   - Conclusion: conclusion.md
 
+markdown_extensions:
+  - attr_list
+  - md_in_html
 
 
