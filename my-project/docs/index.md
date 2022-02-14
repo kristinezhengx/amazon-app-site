@@ -1,4 +1,4 @@
-# Shopping with Graphs
+# Shopping with Graphs:  Learn Rising Graph Database Technology for Full-Stack Flutter Application
 
 ## Learn Graph Database Technology for Full-Stack Flutter Application
 
