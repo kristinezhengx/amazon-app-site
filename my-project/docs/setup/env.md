@@ -122,18 +122,32 @@ We will learn how to connect to our TigerGraph solution in the [Middleware](midd
 
 ## TigerGraph Cloud
 
-### Create your Solution:
+### Create your Solution
 
 Navigate to [TigerGraph Cloud] and create an account if you haven't already.
 
+![Setup 1](/assets/setup/tgSetup1.png)
+
 Once logged in, navigate to the "My Solutions" tab. Next, press the blue "Create Solution" button.
+
+![Setup 2](/assets/setup/tgSetup2.png)
 
 We will using a blank starter kit!
 
+![Setup 3](/assets/setup/tgSetup3.png)
+
 The rest of the settings will not need to be changed, scroll down, and press "Next".
+
+![Setup 4](/assets/setup/tgSetup4.png)
 
 Customize the third page best to best describe your graph. Keep note of and maybe write down your password and subdomain. We will need these later when using pyTigerGraph. Once you are satisfied with your Solution Settings, press "Next".
 
+![Setup 5](/assets/setup/tgSetup5.png)
+
 Review your options on the final page, and if all looks good, press "Submit".
 
-It may take a few minutes for your solution to be ready to start. You can check the status of your solution by pressing "Pending Tasks" in the top right corner of your screen. And once the solution is ready, you can click the four squares under "Actions" and open TigerGraph Studio to begin building your TigerGraph Solution!
+![Setup 6](/assets/setup/tgSetup6.png)
+
+It may take a few minutes for your solution to be ready to start. You can check the status of your solution by pressing "Pending Tasks" in the top right corner of your screen. And once the solution is ready, you can click the square with dials in it, "Solution Operations, under "Actions" to start and stop your solution!
+
+![Setup 7](/assets/setup/tgSetup7.png)
