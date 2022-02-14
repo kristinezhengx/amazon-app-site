@@ -211,18 +211,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../setup/" class="md-tabs__link">
-      Software setup
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="../../env/" class="md-tabs__link">
       Environment Setup
     </a>
@@ -349,21 +337,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/" class="md-nav__link">
-        Software setup
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../env/" class="md-nav__link">
         Environment Setup
       </a>
@@ -414,7 +387,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -435,13 +408,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_5">
           Frontend
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Frontend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Frontend
         </label>
@@ -590,15 +563,15 @@
   <h1>Dependency Changes</h1>
 
 <p>To communicate with FastAPI, REST API requests must happen within Flutter. HTTP shall be utilized to do so. In your code editor, navigate to the <code>tg_flutter</code> directory and open the <code>pubspec.yaml</code> file. Located about line 29 are our app's dependencies. Add the <code>http</code> dependecy to your <code>yaml</code> file to make it look like it does below. You may or may not be prompted to update the dependencies.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">dependencies</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="nt">http</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^0.13.4</span><span class="w"></span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="nt">url_launcher</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">^6.0.18</span><span class="w"></span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="nt">flutter</span><span class="p">:</span><span class="w"></span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="nt">sdk</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flutter</span><span class="w"></span>
-</code></pre></div>
+<pre><code class="language-yaml">dependencies:
+ http: ^0.13.4
+ url_launcher: ^6.0.18
+ flutter:
+   sdk: flutter
+</code></pre>
 <p>To update your dependencies use the following command from the <code>tg_flutter</code> folder.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ flutter pub get
-</code></pre></div>
+<pre><code>$ flutter pub get
+</code></pre>
 
               
             </article>

@@ -213,18 +213,6 @@
         
   
   
-
-
-  <li class="md-tabs__item">
-    <a href="../setup/" class="md-tabs__link">
-      Software setup
-    </a>
-  </li>
-
-      
-        
-  
-  
     
   
 
@@ -341,21 +329,6 @@
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         Home
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../setup/" class="md-nav__link">
-        Software setup
       </a>
     </li>
   
@@ -536,7 +509,7 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
       
       
       
@@ -557,13 +530,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_5">
           Frontend
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Frontend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Frontend
         </label>
@@ -817,9 +790,9 @@
   <h1>Environment Setup</h1>
 
 <p>So to begin setting up our environment, let's start by creating a project folder in a desired location that will hold the contents of our project. Name it <code>my-project</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ mkdir my-project
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>$ cd my-project
-</code></pre></div>
+<pre><code>$ mkdir my-project
+$ cd my-project
+</code></pre>
 <h2 id="flutter">Flutter</h2>
 <p>Now, to create a Flutter project, we first must fulfill the Flutter Requirements needed:</p>
 <ul>
@@ -831,18 +804,18 @@
 <p><strong>IMPORTANT NOTE</strong>: The instructions provided by the Flutter Docs only sets your PATH variable for the current terminal window and not for future terminal windows. Follow <a href="https://stackoverflow.com/questions/50652071/flutter-command-not-found">these</a> instructions to permanently add Flutter to your path. </p>
 <h3 id="create-a-new-flutter-project-with-web-support">Create a new Flutter project with web support</h3>
 <p>Run the following commands to get the latest version of Flutter</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$ flutter channel stable
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>$ flutter upgrade
-</code></pre></div>
+<pre><code>$ flutter channel stable
+$ flutter upgrade
+</code></pre>
 <p>And create and run a new Flutter project within the my-project directory. I named my flutter project <code>tg_flutter</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ mkdir my-project
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$ cd my-project
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>$ flutter create tg_flutter
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>$ cd tg_flutter
-</code></pre></div>
+<pre><code>$ mkdir my-project
+$ cd my-project
+$ flutter create tg_flutter
+$ cd tg_flutter
+</code></pre>
 <p>Serve your app from localhost in Chrome by running the following command from the main directory of the project, <code>tg_flutter</code>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$ flutter run -d chrome
-</code></pre></div>
+<pre><code>$ flutter run -d chrome
+</code></pre>
 <p>This launches the application using the development compiler in the Chrome browser.</p>
 <h2 id="middleware">Middleware</h2>
 <p>Requirements</p>
@@ -852,38 +825,38 @@
 </ul>
 <h2 id="create-middleware-directory">Create Middleware Directory</h2>
 <p>In the <code>my-project</code> directory, create a new directory to hold the goods for the middleware.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$ mkdir middleware
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$ cd middleware
-</code></pre></div>
+<pre><code>$ mkdir middleware
+$ cd middleware
+</code></pre>
 <p>Your <code>middleware</code> and <code>tg_flutter</code> directories should sit next to each other in the <code>my-project</code> directory.</p>
 <h3 id="python-virtual-environment">Python Virtual Environment</h3>
 <p>Create a virtual environment using venv and Python.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$ python3 -m venv venv
-</code></pre></div>
+<pre><code>$ python3 -m venv venv
+</code></pre>
 <p>Activate the new virtual environment.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$ source venv/bin/activate
-</code></pre></div>
+<pre><code>$ source venv/bin/activate
+</code></pre>
 <p>There should now be (venv) in front of your terminal after activating the virtual environment. </p>
 <h3 id="install-packages">Install Packages</h3>
 <p>For the middleware, we will be using pyTigerGraph, FastAPI, and a library called uvicorn that is used by FastAPI</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$ pip install pyTigerGraph fastapi uvicorn
-</code></pre></div>
+<pre><code>$ pip install pyTigerGraph fastapi uvicorn
+</code></pre>
 <p><em><a href="https://fastapi.tiangolo.com/">What is FastAPI?</a></em></p>
 <h3 id="fastapi-setup">FastAPI Setup</h3>
 <p>Open the <code>my-project</code> directory in VS Code or your editor of choice, open the <code>middleware</code> folder, and create a file called <code>main.py</code> inside of it.</p>
 <p>Click into <code>main.py</code> and use code from FastAPI in that file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">()</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nd">@app</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">def</span> <span class="nf">read_root</span><span class="p">():</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Hello&quot;</span><span class="p">:</span> <span class="s2">&quot;World&quot;</span><span class="p">}</span>
-</code></pre></div>
+<pre><code class="language-python">from typing import Optional
+from fastapi import FastAPI
+
+app = FastAPI()
+@app.get(&quot;/&quot;)
+def read_root():
+    return {&quot;Hello&quot;: &quot;World&quot;}
+</code></pre>
 <h3 id="run-the-api">Run the API</h3>
 <p>Save <code>main.py</code>, open an integrated terminal in VS Code, and run the following command to run the API.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$ uvicorn main:app --reload
-</code></pre></div>
+<pre><code>$ uvicorn main:app --reload
+</code></pre>
 <p>This is using uvicorn to run our file. The file name is <code>main</code> and the <code>--reload</code> has the server automatically relaod after new changes are saved to the <code>main.py</code> file.</p>
 <h3 id="explore-the-endpoints">Explore the Endpoints</h3>
 <p>Now it's time to check out the endpoints that were just created! Enter <a href="https://127.0.0.1:8000">https://127.0.0.1:8000</a> in a browser page, and here you should find the {“Hello”: “World”} from the first function in the <code>main.py</code> file</p>
@@ -912,7 +885,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../setup/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software setup" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -921,7 +894,7 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Software setup
+              Home
             </div>
           </div>
         </a>

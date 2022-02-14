@@ -211,18 +211,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../setup/" class="md-tabs__link">
-      Software setup
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="../../env/" class="md-tabs__link">
       Environment Setup
     </a>
@@ -349,21 +337,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/" class="md-nav__link">
-        Software setup
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../env/" class="md-nav__link">
         Environment Setup
       </a>
@@ -414,7 +387,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -435,13 +408,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_5">
           Frontend
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Frontend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Frontend
         </label>
@@ -589,7 +562,74 @@
 
   <h1>Navigation</h1>
 
+<p>Creating navigation in Flutter is pretty straightforward. In Flutter, screens and pages are called routes. Create two routes, Navigate to the second route using Navigator.push(), and then return to the first route using Navigator.pop() and you will have two pages to display information! The Navigator.push() method adds a route to the stack of routes managed by navigator and the Navigator.pop() method removes the current route from the stack.</p>
+<p>In your empty <code>main.dart</code> file, paste the following code provided by the <a href="https://docs.google.com/document/d/1TB7ZxMQH2AZLN8t5jx1Y8KM7ak7Ra49BCS1bQWazKk4/edit?usp=sharing">Flutter Navigation docs</a></p>
+<pre><code class="language-dart">import 'package:flutter/material.dart';
 
+void main() {
+ runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+ @override
+ Widget build(BuildContext context) {
+   return MaterialApp(
+     title: 'Amazon App',
+     theme: ThemeData(
+       primarySwatch: Colors.orange,
+       visualDensity: VisualDensity.adaptivePlatformDensity,
+     ),
+     home: HomePage(),
+   );
+ }
+}
+</code></pre>
+<p>Then we want to create a folder within our <code>lib</code> directory called <code>pages</code>. This folder will hold the <code>dart</code> files containing the code for our content pages. Create three new dart files within this folder: <code>home_page.dart</code>, <code>product_page.dart</code> and <code>user_page.dart</code>.</p>
+<p>Paste the following code into each file, but change each of the 'HomePage' in the code to match the applicable file name. This is the basic skeleton and structure of each Flutter page.</p>
+<pre><code class="language-dart">import 'package:flutter/material.dart';
+
+class ProductPage extends StatefulWidget {
+ ProductPage({Key? key}) : super(key: key);
+
+ @override
+ _ProductPageState createState() =&gt; _ProductPageState();
+}
+
+class _ProductPageState extends State&lt;ProductPage&gt; {
+ @override
+ Widget build(BuildContext context) {
+   return Scaffold();
+ }
+}
+</code></pre>
+<p>We also want to create the controllers and a 'on clicked' function called <code>_onItemTapped</code> to control clicking on our Nav Bar. </p>
+<pre><code class="language-dart">PageController _pageController = PageController();
+ List&lt;Widget&gt; _screen = [IntroPage(), UserPage(), ProductPage()];
+ int _selectedIndex = 0;
+
+ void _onPageChanged(int index) {
+   setState(() {
+     _selectedIndex = index;
+   });
+ }
+
+ void _onItemTapped(int selectedIndex) {
+   _pageController.jumpToPage(selectedIndex);
+ }
+</code></pre>
+<p>And then initialize!</p>
+<pre><code class="language-dart">return Scaffold(
+     body: PageView(
+       controller: _pageController,
+       children: _screen,
+       onPageChanged: _onPageChanged,
+       physics: NeverScrollableScrollPhysics(),
+     ),
+</code></pre>
+<p>Once you've made the appropriate changes to your code, save <code>main.dart, open a terminal to the</code>tg_flutter<code>folder and run</code>flutter run -d chrome`. A Chrome browser will automatically open and run assuming there are no errors. Here you will find the web application with the navigation bar. </p>
+<p><img alt="Navigation" src="/assets/frontend/multiPage.gif" /></p>
+<p><a href="https://www.youtube.com/watch?v=YJEMMhA9udQ">Here</a> is the tutorial I watched to learn about the implementation of a Navbar in Flutter. The tutorial also gives more information about page persistence. I will not explain the exact implementation, but the please watch the tutorial as it is very helpful! And reference the code provided in the repo.</p>
+<p><em>Side Note: After you make changes to your <code>main.dart</code> file, if you hit <code>r</code> in the terminal that the terminal the flutter app is running from, it will hot restart the changes you made while the app is still running! The browser will just reload and your changes should appear as long as there are no errors.</em></p>
 
               
             </article>

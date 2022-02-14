@@ -211,18 +211,6 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../setup/" class="md-tabs__link">
-      Software setup
-    </a>
-  </li>
-
-      
-        
-  
-  
-
-
-  <li class="md-tabs__item">
     <a href="../../env/" class="md-tabs__link">
       Environment Setup
     </a>
@@ -349,21 +337,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../setup/" class="md-nav__link">
-        Software setup
-      </a>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../env/" class="md-nav__link">
         Environment Setup
       </a>
@@ -414,7 +387,7 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
       
       
       
@@ -435,13 +408,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_6">
+        <label class="md-nav__link" for="__nav_5">
           Frontend
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Frontend" data-md-level="1">
-        <label class="md-nav__title" for="__nav_6">
+        <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Frontend
         </label>
@@ -589,7 +562,17 @@
 
   <h1>Adding to the Intro Page</h1>
 
-
+<p>Let's begin adding content to our application and start off with something simple, adding a gif to our intro page! Find your favorite gif online, copy the url, and let's display it from the web.</p>
+<p>The following line of code is a network call to display images from a url string.</p>
+<pre><code class="language-dart">Image.network('https://example.com/animated-image.gif')
+</code></pre>
+<p>Below is the code I included in the body of my <code>intro_page.dart</code> to display a TigerGraph inspired gif!</p>
+<pre><code class="language-dart">child: Image.network('https://media2.giphy.com/media/dv7LVj1t6e1wobkYgX/giphy.gif?cid=ecf05e47zs97ng6h05arjp3l73ti4g0wyqr191cgy19bqoa4&amp;rid=giphy.gif&amp;ct=g',
+    width: 300,
+    height: 400,
+    fit: BoxFit.contain,
+),
+</code></pre>
 
               
             </article>
