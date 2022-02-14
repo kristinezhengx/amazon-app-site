@@ -91,7 +91,7 @@ extra:
 # Page tree
 nav:
   - Home: index.md
-  - Software setup: setup.md
+  - Software Setup: setup.md
   - Data: dataworld.md
   - Environment Setup: env.md
   - TigerGraph Cloud: tgcloud.md
