@@ -86,6 +86,7 @@ extra:
 nav:
   - Home: index.md
   - Software setup: setup.md
+  - Data: dataworld.md
   - Environment Setup: env.md
   - TigerGraph Cloud: tgcloud.md
   - Middleware: middleware.md
