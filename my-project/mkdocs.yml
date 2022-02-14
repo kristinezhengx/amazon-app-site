@@ -13,6 +13,7 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.tabs.sticky
+    - content.code.annotate
 
 # Default values, taken from mkdocs_theme.yml
   language: en
@@ -54,6 +55,13 @@ theme:
 # Plugins
 plugins:
   - search
+  
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 # Customization
 extra:
