@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Setting up TGcloud and Graph Schema
 
 ## Creating a Solution
