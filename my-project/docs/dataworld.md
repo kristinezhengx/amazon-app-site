@@ -2,7 +2,7 @@
 
 ## Data to use
 
-[Cleaned Amazon Product Review](link)
+Unzip the [Cleaned Amazon Product Review Data](https://github.com/mckenzie-steenson/amazonProductApp/blob/main/data/Amazon_Products_Reviews.csv.zip)
 
 ## Process 
 
@@ -17,6 +17,6 @@ We selected this dataset of over 1500 consumer reviews for Amazon products inclu
 
 We used pandas to process and clean the amazon product data by removing unncessary columns and expanding lists as individual rows. 
 
-Click this jupyter notebook [name](link) to see the process. 
+Click this [jupyter notebook](https://github.com/mckenzie-steenson/amazonProductApp/blob/main/notebooks/simplify_amazon_reviews.ipynb) to see the process. 
 
 

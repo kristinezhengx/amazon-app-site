@@ -18,7 +18,8 @@ python --version
 - Install flutter?
 - Register or verify you have a Firebase account (connected to gmails)
 
-Optional preparation:
+## Optional preparation:
+
 - Review GSQL 101:
-* [docs](https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/)
-* [videos](https://www.tigergraph.com/certification/tigergraph-certification-gsql-101/)
+    - [docs](https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/)
+    - [videos](https://www.tigergraph.com/certification/tigergraph-certification-gsql-101/)
