@@ -1,6 +1,6 @@
 # Queries! 
 
-After you finish creating your schema, mapping and loading data, and exploring, you are ready to use queries to analyze, update, and compute information from the graph! 
+After you finish creating your schema, mapping and loading data, and exploring, you are ready to use queries to analyze, update, and compute information from the graph! Move to the Write Queries part of the side bar to start. 
 
 Read about TigerGraph's [query documentation](https://docs.tigergraph.com/gsql-ref/current/querying/query-operations)
 
@@ -18,7 +18,7 @@ CREATE QUERY productWithCategory(STRING CatID) FOR GRAPH ProductGraph {
 
 
 
-* Recommends product by reviewer username and the categories of products they have reviewed 
+* Recommends product by reviewer username and the categories of products they have reviewed. This query uses accumulators, a special type of variables that gather information about the graph during its traversal and exploration. 
 ```sql
 CREATE QUERY recommendProd(STRING username, int k) FOR GRAPH ProductGraph SYNTAX V2{ 
   SetAccum<VERTEX> @@usedProd;
