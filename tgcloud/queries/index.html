@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#queries" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -510,10 +515,63 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Queries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Queries
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-examples" class="md-nav__link">
+    Relevant Examples:
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Examples:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accumulators" class="md-nav__link">
+    Accumulators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -711,15 +769,120 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#relevant-examples" class="md-nav__link">
+    Relevant Examples:
+  </a>
+  
+    <nav class="md-nav" aria-label="Relevant Examples:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accumulators" class="md-nav__link">
+    Accumulators
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>Queries</h1>
+<h1 id="queries">Queries!</h1>
+<p>After you finish creating your schema, mapping and loading data, and exploring, you are ready to use queries to analyze, update, and compute information from the graph! Move to the Write Queries part of the side bar to start. </p>
+<p>Read about TigerGraph's <a href="https://docs.tigergraph.com/gsql-ref/current/querying/query-operations">query documentation</a></p>
+<h2 id="relevant-examples">Relevant Examples:</h2>
+<h3 id="general">General</h3>
+<ul>
+<li>Finds all products under certain category</li>
+</ul>
+<pre><code class="language-sql">CREATE QUERY productWithCategory(STRING CatID) FOR GRAPH ProductGraph { 
+  prod = {Product.*}; // get all products into a set
 
+  results = SELECT p FROM prod:p -(PRODUCT_HAS_CATEGORY)-&gt; Category:c WHERE c.id == CatID;
+  PRINT CatID, results;
+}
+</code></pre>
+<h3 id="accumulators">Accumulators</h3>
+<p>These next two queries uses accumulators, a special type of variables that gather information about the graph during its traversal and exploration. </p>
+<ul>
+<li>Recommends product by reviewer username and the categories of products they have reviewed. </li>
+</ul>
+<pre><code class="language-sql">CREATE QUERY recommendProd(STRING username, int k) FOR GRAPH ProductGraph SYNTAX V2{ 
+  SetAccum&lt;VERTEX&gt; @@usedProd;
+  prod = {Product.*};
 
+  vset1 = SELECT p FROM User:u-(USER_REVIEWS_PRODUCT&gt;:e1)-prod:p-(PRODUCT_HAS_CATEGORY&gt;:e2)-Category-(reverse_PRODUCT_HAS_CATEGORY&gt;:e3)-prod:p
+        WHERE u.id == username
+        ACCUM @@usedProd += p;
+  PRINT vset1;
+}
+</code></pre>
+<ul>
+<li>Recommends products for a user based highest average rating and number of reviews. </li>
+</ul>
+<pre><code class="language-sql">CREATE QUERY recommender(STRING username, int k) FOR GRAPH ProductGraph RETURNS (SET&lt;VERTEX&gt;) SYNTAX v2 { 
+  SetAccum&lt;VERTEX&gt; @@usedProd;
+  AvgAccum @avgRating;
+  SumAccum&lt;INT&gt; @numRating;
+  prod = {Product.*};
+
+  vset1 = SELECT p FROM prod:p-(reverse_USER_REVIEWS_PRODUCT&gt;:e)- User
+           ACCUM p.@avgRating += e.rating, p.@numRating +=1;
+
+  vset2 = SELECT p FROM User:u-(USER_REVIEWS_PRODUCT&gt;:e1)-prod:p1-(PRODUCT_HAS_CATEGORY&gt;:e2)-Category-(reverse_PRODUCT_HAS_CATEGORY&gt;:e3)-vset1:p
+        WHERE u.id == username
+        ACCUM @@usedProd += p1;
+
+ result = SELECT v FROM vset2:v-(reverse_USER_REVIEWS_PRODUCT&gt;:e)-User
+          Where v not in @@usedProd
+          ORDER BY v.@avgRating DESC, v.@numRating DESC
+          LIMIT k;
+
+  PRINT result[result.name, result.@avgRating, result.@numRating]; 
+  RETURN result;
+}
+</code></pre>
 
               
             </article>
