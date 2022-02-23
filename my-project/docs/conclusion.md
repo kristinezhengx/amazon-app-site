@@ -2,6 +2,6 @@ Awesome! We have completed our full stack Amazon Product Recommendation applicat
 
 <center>
 <video width="700" height="500" controls>
-  <source src="/assets/frontend/finalDraft.mov" type="video/mp4">
+  <source src="../assets/frontend/finalDraft.mov" type="video/mp4">
 </video>
 </center>
