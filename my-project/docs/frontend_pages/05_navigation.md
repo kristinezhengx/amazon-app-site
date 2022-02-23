@@ -79,7 +79,9 @@ return Scaffold(
 Once you've made the appropriate changes to your code, save `main.dart, open a terminal to the `tg_flutter` folder and run `flutter run -d chrome`. A Chrome browser will automatically open and run assuming there are no errors. Here you will find the web application with the navigation bar. 
 
 <center>
+
 ![Navigation](../assets/frontend/multiPage.gif)
+
 </center>
 
 [Here](https://www.youtube.com/watch?v=YJEMMhA9udQ) is the tutorial I watched to learn about the implementation of a Navbar in Flutter. The tutorial also gives more information about page persistence. I will not explain the exact implementation, but the please watch the tutorial as it is very helpful! And reference the code provided in the repo.
