@@ -80,7 +80,7 @@ Once you've made the appropriate changes to your code, save `main.dart, open a t
 
 <center>
 
-![Navigation](../assets/frontend/multiPage.gif)
+  ![Navigation](../assets/frontend/multiPage.gif)
 
 </center>
 
