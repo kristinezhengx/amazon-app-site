@@ -118,6 +118,65 @@ Now it's time to check out the endpoints that were just created! Enter [https://
 
 Enter [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) or [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc) to find interactive documentation for the endpoints we created. Thanks fastAPI!
 
+## Firebase
+
+Sign into Firebase using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.
+
+### Create Firebase Project
+Once you have [Created your Firebase Project](https://firebase.google.com/docs/web/setup#create-project), you will be able to [Register your project](https://firebase.google.com/docs/web/setup#register-app)!
+
+### Add Firebase SDKs
+The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Add the f`irebase-app.js` script to your `index.html `file:
+
+```html
+<html>
+  ...
+  <body>
+    <!-- Add these lines -->
+    <script>window.flutterfire_web_sdk_version = '8.10.0';</script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <!-- Add ^ lines -->
+    <script src="main.dart.js" type="application/javascript"></script>
+  </body>
+</html>
+```
+### Initializing Firebase
+The next step is to initialize Firebase using your project configuration. Create a new web app (or choose an existing one) on the Firebase Console and copy the configuration details.
+
+Initialize Firebase using these configuration details, placing the following script below the CDN imports added above:
+
+```html
+<html>
+  ...
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    ...
+
+    <!-- Firebase Configuration -->
+    <script>
+      var firebaseConfig = {
+        apiKey: "...",
+        authDomain: "[YOUR_PROJECT].firebaseapp.com",
+        databaseURL: "https://[YOUR_PROJECT].firebaseio.com",
+        projectId: "[YOUR_PROJECT]",
+        storageBucket: "[YOUR_PROJECT].appspot.com",
+        messagingSenderId: "...",
+        appId: "1:...:web:...",
+        measurementId: "G-...",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+  </body>
+</html>
+```
+
+Once you've followed the Firebase setup documentation and implemented the above code, your environment should be setup to begin working with Firebase!
 <!-- ## TigerGraph Cloud
 
 ### Create your Solution
