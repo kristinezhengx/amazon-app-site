@@ -125,6 +125,11 @@ Sign into Firebase using your Google account and follow the linked Google docume
 ### Create Firebase Project
 Once you have [Created your Firebase Project](https://firebase.google.com/docs/web/setup#create-project), you will be able to [Register your project](https://firebase.google.com/docs/web/setup#register-app)!
 
+This is an example of my registration process:
+![Firebase Registration](../assets/firebase/firebase1.png)
+
+![Firebase Registration](../assets/firebase/firebase2.png)
+
 ### Add Firebase SDKs
 The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Add the f`irebase-app.js` script to your `index.html `file:
 

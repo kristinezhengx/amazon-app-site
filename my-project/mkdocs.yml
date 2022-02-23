@@ -112,8 +112,8 @@ nav:
     - 'TigerGraph Functionality': 'frontend_pages/07_tigergraph.md'
   - Firebase:
     - 'Initialize Storage': 'firebase/initialize.md'
-    - 'Upload Images': 'firebase/access.md'
-    - 'Access Storage in your Project': 'firebase/upload.md'
+    - 'Upload Images': 'firebase/upload.md'
+    - 'Access Storage in your Project': 'firebase/access.md'
   - Conclusion: conclusion.md
 
 markdown_extensions:
