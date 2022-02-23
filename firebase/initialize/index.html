@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#why-firebase-storage" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -746,9 +751,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Initialize Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Initialize Storage
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-firebase-storage" class="md-nav__link">
+    Why Firebase Storage?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-start-with-firebase-storage" class="md-nav__link">
+    Getting start with Firebase Storage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -776,7 +817,7 @@
   
     <li class="md-nav__item">
       <a href="../access/" class="md-nav__link">
-        Access Storage in your Project
+        Access Storage in Your Project
       </a>
     </li>
   
@@ -811,6 +852,44 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-firebase-storage" class="md-nav__link">
+    Why Firebase Storage?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-start-with-firebase-storage" class="md-nav__link">
+    Getting start with Firebase Storage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -819,10 +898,15 @@
 
   <h1>Initialize Storage</h1>
 
+<h2 id="why-firebase-storage">Why Firebase Storage?</h2>
+<p>Cloud Storage for Firebase is built for app developers who need to store and serve user-generated content, such as photos or videos. It is a cost-effective storage solution. The use of the Firebase SDKs allows us to store and upload images, audio, and other user-generated content, and the Google Cloud Storage APIs are used to access these files.</p>
+<p>For our use case, we'd like to store product images in the Cloud Storage which will be accessed through Flutter. </p>
+<p><em>Again, <a href="https://firebase.google.com/docs/storage/web/start">here</a> is the Firebase documentation for getting started with web storage with Firebase.</em></p>
+<h2 id="getting-start-with-firebase-storage">Getting start with Firebase Storage</h2>
 <p>Let's begin by getting our Firebase storage ready!</p>
 <p>Go to your project dashboard on Firebase Console, select “Storage” from the left-hand menu then you can see the bucket path as shown in the screenshot below:</p>
 <p><img alt="Firebase Registration" src="../../assets/firebase/firebase3.png" /></p>
-<p>You don’t have to manually add the path to your Flutter code because it will be handled automatically by Firebase packages.</p>
+<p>I have created a folder called <code>test</code> to hold all the image files for this project. You don’t have to manually add the path to your Flutter code because it will be handled automatically by Firebase packages.</p>
 <p>For simplicity’s sake, we will NOT implement authentication in this example. Therefore, we need to change the rules for Firebase Storage to be public, like this:</p>
 <p><img alt="Firebase Registration" src="../../assets/firebase/firebase5.png" /></p>
 

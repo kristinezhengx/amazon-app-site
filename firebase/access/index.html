@@ -13,7 +13,7 @@
     
     
       
-        <title>Access Storage in your Project - TigerGraph Full Stack Course with Flutter and Firebase</title>
+        <title>Access Storage in Your Project - TigerGraph Full Stack Course with Flutter and Firebase</title>
       
     
     
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#configure-main-file" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Access Storage in your Project
+              Access Storage in Your Project
             
           </span>
         </div>
@@ -774,9 +779,45 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Access Storage in Your Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Access Storage in your Project
+        Access Storage in Your Project
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-main-file" class="md-nav__link">
+    Configure Main File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-on-product-page" class="md-nav__link">
+    Implement on Product Page
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -811,15 +852,118 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-main-file" class="md-nav__link">
+    Configure Main File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implement-on-product-page" class="md-nav__link">
+    Implement on Product Page
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
 
-  <h1>Access Storage in your Project</h1>
+  <h1>Access Storage in Your Project</h1>
 
+<p>Now that everything has been setup and our images reside in our Cloud Firebase Storage, we are ready to implement code to access our images in our application!</p>
+<h3 id="configure-main-file">Configure Main File</h3>
+<p>First, we must initialize Firebase when our app is run. In <code>main.dart</code> file, change your <code>main()</code> function to match below.</p>
+<pre><code class="language-dart">Future&lt;void&gt; main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
+</code></pre>
+<h3 id="implement-on-product-page">Implement on Product Page</h3>
+<p>Next, we move to <code>product_page.dart</code> to add the Firebase package to the top of the code.</p>
+<pre><code class="language-dart">import 'package:firebase_storage/firebase_storage.dart';
+</code></pre>
+<p>Then, we add a boolean variable to control when image populates under the <code>_ProductPageState</code> class variable.</p>
+<pre><code class="language-dart">  bool isButtonPressed = false;
+</code></pre>
+<p>Now, a new function is created to get the image from the firebase instance.</p>
+<pre><code class="language-dart">Future _getImage(BuildContext context, String imageName) async {
+    String? downloadURL;
+    downloadURL =
+        await FirebaseStorage.instance.ref().child(imageName).getDownloadURL();
 
+    return downloadURL;
+  }
+</code></pre>
+<p>Now, inside the Container that handles the <code>_productExists()</code> functionalirty, we want to call our new <code>_getImage()</code> when our button is pressed.</p>
+<pre><code class="language-dart">                    _productExists().then((result) {
+                        // ignore: unnecessary_null_comparison
+                        if (result.id != null) {
+                          setState(() {
+                            _productString = productController.text;
+                            _productName = (result.name);
+                            _productImgUrl = (result.imgURL);
+                            _getImage(
+                                context, &quot;test/&quot; + _productString + &quot;.jpeg&quot;);
+                            print(_productString + &quot;.jpeg&quot;);
+                            isButtonPressed = true;
+                          });
+                        } else {
+                          setState(() {
+                            isVisible = true;
+                            _productName = &quot;This product does not exist!&quot;;
+                          });
+                        }
+                      }
+</code></pre>
+<p>Below that, we want to include the FutureBuilder that Connects to the Image Network to populate our image from the Firebase Storage URL that was created from the user input in the code above.</p>
+<pre><code class="language-dart">if (isButtonPressed)
+                FutureBuilder(
+                    future:
+                        _getImage(context, &quot;test/&quot; + _productString + &quot;.jpeg&quot;),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return const Text(
+                          &quot;Something went wrong&quot;,
+                        );
+                      }
+                      if (snapshot.connectionState == ConnectionState.done) {
+                        return Image.network(
+                          snapshot.data.toString(),
+                        );
+                      }
+                      return const Center(child: CircularProgressIndicator());
+                    })
+</code></pre>
+<p>And voila! Firebase should be successfully implemented into our application! Now, when searching products, all of our images will successfully be populated from our Cloud Firebase Storage!</p>
 
               
             </article>
