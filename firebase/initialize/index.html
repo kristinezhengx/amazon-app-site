@@ -761,7 +761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../access/" class="md-nav__link">
+      <a href="../upload/" class="md-nav__link">
         Upload Images
       </a>
     </li>
@@ -775,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../upload/" class="md-nav__link">
+      <a href="../access/" class="md-nav__link">
         Access Storage in your Project
       </a>
     </li>
@@ -819,7 +819,12 @@
 
   <h1>Initialize Storage</h1>
 
-
+<p>Let's begin by getting our Firebase storage ready!</p>
+<p>Go to your project dashboard on Firebase Console, select “Storage” from the left-hand menu then you can see the bucket path as shown in the screenshot below:</p>
+<p><img alt="Firebase Registration" src="../../assets/firebase/firebase3.png" /></p>
+<p>You don’t have to manually add the path to your Flutter code because it will be handled automatically by Firebase packages.</p>
+<p>For simplicity’s sake, we will NOT implement authentication in this example. Therefore, we need to change the rules for Firebase Storage to be public, like this:</p>
+<p><img alt="Firebase Registration" src="../../assets/firebase/firebase5.png" /></p>
 
               
             </article>
@@ -854,7 +859,7 @@
       
       
         
-        <a href="../access/" class="md-footer__link md-footer__link--next" aria-label="Next: Upload Images" rel="next">
+        <a href="../upload/" class="md-footer__link md-footer__link--next" aria-label="Next: Upload Images" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
