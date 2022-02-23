@@ -118,34 +118,34 @@ Now it's time to check out the endpoints that were just created! Enter [https://
 
 Enter [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) or [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc) to find interactive documentation for the endpoints we created. Thanks fastAPI!
 
-## TigerGraph Cloud
+<!-- ## TigerGraph Cloud
 
 ### Create your Solution
 
 Navigate to [TigerGraph Cloud] and create an account if you haven't already.
 
-![Setup 1](/assets/setupSteps/tgSetup1.png)
+![Setup 1](../assets/setupSteps/tgSetup1.png)
 
 Once logged in, navigate to the "My Solutions" tab. Next, press the blue "Create Solution" button.
 
-![Setup 2](/assets/setupSteps/tgSetup2.png)
+![Setup 2](../assets/setupSteps/tgSetup2.png)
 
 We will using a blank starter kit!
 
-![Setup 3](/assets/setupSteps/tgSetup3.png)
+![Setup 3](../assets/setupSteps/tgSetup3.png)
 
 The rest of the settings will not need to be changed, scroll down, and press "Next".
 
-![Setup 4](/assets/setupSteps/tgSetup4.png)
+![Setup 4](../assets/setupSteps/tgSetup4.png)
 
 Customize the third page best to best describe your graph. Keep note of and maybe write down your password and subdomain. We will need these later when using pyTigerGraph. Once you are satisfied with your Solution Settings, press "Next".
 
-![Setup 5](/assets/setupSteps/tgSetup5.png)
+![Setup 5](../assets/setupSteps/tgSetup5.png)
 
 Review your options on the final page, and if all looks good, press "Submit".
 
-![Setup 6](/assets/setupSteps/tgSetup6.png)
+![Setup 6](../assets/setupSteps/tgSetup6.png)
 
 It may take a few minutes for your solution to be ready to start. You can check the status of your solution by pressing "Pending Tasks" in the top right corner of your screen. And once the solution is ready, you can click the square with dials in it, "Solution Operations, under "Actions" to start and stop your solution!
 
-![Setup 7](/assets/setupSteps/tgSetup7.png)
+![Setup 7](../assets/setupSteps/tgSetup7.png) -->
