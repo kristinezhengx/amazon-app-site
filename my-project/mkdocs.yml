@@ -110,6 +110,10 @@ nav:
     - 'Navigation': 'frontend_pages/05_navigation.md'
     - 'Adding to the Intro Page': 'frontend_pages/06_adding.md'
     - 'TigerGraph Functionality': 'frontend_pages/07_tigergraph.md'
+  - Firebase:
+    - 'Initialize Storage': 'firebase/initialize.md'
+    - 'Upload Images': 'firebase/access.md'
+    - 'Access Storage in your Project': 'firebase/upload.md'
   - Conclusion: conclusion.md
 
 markdown_extensions:
