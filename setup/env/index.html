@@ -514,6 +514,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#firebase" class="md-nav__link">
+    Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-firebase-project" class="md-nav__link">
+    Create Firebase Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-firebase-sdks" class="md-nav__link">
+    Add Firebase SDKs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initializing-firebase" class="md-nav__link">
+    Initializing Firebase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -905,6 +939,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#firebase" class="md-nav__link">
+    Firebase
+  </a>
+  
+    <nav class="md-nav" aria-label="Firebase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-firebase-project" class="md-nav__link">
+    Create Firebase Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-firebase-sdks" class="md-nav__link">
+    Add Firebase SDKs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initializing-firebase" class="md-nav__link">
+    Initializing Firebase
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -992,6 +1060,56 @@ def read_root():
 <h3 id="explore-the-endpoints">Explore the Endpoints</h3>
 <p>Now it's time to check out the endpoints that were just created! Enter <a href="https://127.0.0.1:8000">https://127.0.0.1:8000</a> in a browser page, and here you should find the {“Hello”: “World”} from the first function in the <code>main.py</code> file</p>
 <p>Enter <a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a> or <a href="http://127.0.0.1:8000/redoc">http://127.0.0.1:8000/redoc</a> to find interactive documentation for the endpoints we created. Thanks fastAPI!</p>
+<h2 id="firebase">Firebase</h2>
+<p>Sign into Firebase using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.</p>
+<h3 id="create-firebase-project">Create Firebase Project</h3>
+<p>Once you have <a href="https://firebase.google.com/docs/web/setup#create-project">Created your Firebase Project</a>, you will be able to <a href="https://firebase.google.com/docs/web/setup#register-app">Register your project</a>!</p>
+<h3 id="add-firebase-sdks">Add Firebase SDKs</h3>
+<p>The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Add the f<code>irebase-app.js</code> script to your <code>index.html</code>file:</p>
+<pre><code class="language-html">&lt;html&gt;
+  ...
+  &lt;body&gt;
+    &lt;!-- Add these lines --&gt;
+    &lt;script&gt;window.flutterfire_web_sdk_version = '8.10.0';&lt;/script&gt;
+    &lt;script src=&quot;https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js&quot;&gt;&lt;/script&gt;
+    &lt;!-- Add ^ lines --&gt;
+    &lt;script src=&quot;main.dart.js&quot; type=&quot;application/javascript&quot;&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="initializing-firebase">Initializing Firebase</h3>
+<p>The next step is to initialize Firebase using your project configuration. Create a new web app (or choose an existing one) on the Firebase Console and copy the configuration details.</p>
+<p>Initialize Firebase using these configuration details, placing the following script below the CDN imports added above:</p>
+<pre><code class="language-html">&lt;html&gt;
+  ...
+  &lt;body&gt;
+    &lt;script src=&quot;https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js&quot;&gt;&lt;/script&gt;
+    ...
+
+    &lt;!-- Firebase Configuration --&gt;
+    &lt;script&gt;
+      var firebaseConfig = {
+        apiKey: &quot;...&quot;,
+        authDomain: &quot;[YOUR_PROJECT].firebaseapp.com&quot;,
+        databaseURL: &quot;https://[YOUR_PROJECT].firebaseio.com&quot;,
+        projectId: &quot;[YOUR_PROJECT]&quot;,
+        storageBucket: &quot;[YOUR_PROJECT].appspot.com&quot;,
+        messagingSenderId: &quot;...&quot;,
+        appId: &quot;1:...:web:...&quot;,
+        measurementId: &quot;G-...&quot;,
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    &lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Once you've followed the Firebase setup documentation and implemented the above code, your environment should be setup to begin working with Firebase!</p>
 <!-- ## TigerGraph Cloud
 
 ### Create your Solution
