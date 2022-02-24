@@ -83,4 +83,8 @@ if (isButtonPressed)
                     })
 ```
 
+Now that Firebase has been implemented, we will need to build the flutter app with a different command that deals with null safety handling. Use the below command to do so:
+```
+$ flutter run -d chrome --no-sound-null-safety --web-renderer=html
+```
 And voila! Firebase should be successfully implemented into our application! Now, when searching products, all of our images will successfully be populated from our Cloud Firebase Storage!
