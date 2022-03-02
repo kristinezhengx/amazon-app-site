@@ -1,8 +1,10 @@
 So to begin setting up our environment, let's start by creating a project folder in a desired location that will hold the contents of our project. Name it `my-project`.
 
 ```
-$ mkdir my-project
-$ cd my-project
+mkdir my-project
+```
+```
+cd my-project
 ```
 
 ## Flutter
@@ -21,23 +23,31 @@ Follow the [Building a Web Application with Flutter](https://docs.flutter.dev/ge
 Run the following commands to get the latest version of Flutter
 
 ```
-$ flutter channel stable
-$ flutter upgrade
+flutter channel stable
+```
+```
+flutter upgrade
 ```
 
 And create and run a new Flutter project within the my-project directory. I named my flutter project `tg_flutter`.
 
 ```
-$ mkdir my-project
-$ cd my-project
-$ flutter create tg_flutter
-$ cd tg_flutter
+mkdir my-project
+```
+```
+cd my-project
+```
+```
+flutter create tg_flutter
+```
+```
+cd tg_flutter
 ```
 
 Serve your app from localhost in Chrome by running the following command from the main directory of the project, `tg_flutter`.
 
 ```
-$ flutter run -d chrome
+flutter run -d chrome
 ```
 
 This launches the application using the development compiler in the Chrome browser.
@@ -54,8 +64,8 @@ Requirements
 In the `my-project` directory, create a new directory to hold the goods for the middleware.
 
 ```
-$ mkdir middleware
-$ cd middleware
+mkdir middleware
+cd middleware
 ```
 
 Your `middleware` and `tg_flutter` directories should sit next to each other in the `my-project` directory.
@@ -65,13 +75,13 @@ Your `middleware` and `tg_flutter` directories should sit next to each other in 
 Create a virtual environment using venv and Python.
 
 ```
-$ python3 -m venv venv
+python3 -m venv venv
 ```
 
 Activate the new virtual environment.
 
 ```
-$ source venv/bin/activate
+source venv/bin/activate
 ```
 
 There should now be (venv) in front of your terminal after activating the virtual environment. 
@@ -81,7 +91,7 @@ There should now be (venv) in front of your terminal after activating the virtua
 For the middleware, we will be using pyTigerGraph, FastAPI, and a library called uvicorn that is used by FastAPI
 
 ```
-$ pip install pyTigerGraph fastapi uvicorn
+pip install pyTigerGraph fastapi uvicorn
 ```
 
 *[What is FastAPI?](https://fastapi.tiangolo.com/)*
@@ -107,7 +117,7 @@ def read_root():
 Save `main.py`, open an integrated terminal in VS Code, and run the following command to run the API.
 
 ```
-$ uvicorn main:app --reload
+uvicorn main:app --reload
 ```
 
 This is using uvicorn to run our file. The file name is `main` and the `--reload` has the server automatically relaod after new changes are saved to the `main.py` file.
@@ -131,7 +141,7 @@ This is an example of my registration process:
 ![Firebase Registration](../assets/firebase/firebase2.png)
 
 ### Add Firebase SDKs
-The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Add the f`irebase-app.js` script to your `index.html `file:
+The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the `tg_flutter` project folder, located the `index.html` file. Add the `firebase-app.js` script to your `index.html` file:
 
 ```html
 <html>
