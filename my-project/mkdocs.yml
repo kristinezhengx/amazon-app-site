@@ -94,7 +94,7 @@ extra:
 nav:
   - Home: index.md
   - Setup: 
-    - 'Computer Setup': 'setup/setup.md'
+    - 'Basic Setup': 'setup/setup.md'
     - 'Environment Setup': 'setup/env.md'
   - Data: dataworld.md
   - TigerGraph Cloud: 

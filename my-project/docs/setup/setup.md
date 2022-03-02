@@ -1,8 +1,4 @@
-# Computer Setup
-
-A few accounts need to be created and a few tools need to be downloaded before the project can be started.
-
-## Items to download
+## Fundamentals to Downlaod
 
 - Create a [Github](https://github.com/) account if you don’t already have one 
 - Install an IDE: we recommend [vscode](https://code.visualstudio.com/)
@@ -14,12 +10,12 @@ python --version
 
 *Visit [Python documentation](https://www.python.org/about/gettingstarted/) for more information.*
 
-- Register for a [TigerGraph cloud account](https://tgcloud.io/)
-- Install flutter?
-- Register or verify you have a Firebase account (connected to gmails)
-
-## Optional preparation:
+## Optional Preparation:
 
 - Review GSQL 101:
-    - [docs](https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/)
-    - [videos](https://www.tigergraph.com/certification/tigergraph-certification-gsql-101/)
+    - [Documentation](https://docs.tigergraph.com/gsql-ref/current/tutorials/gsql-101/)
+    - [TigerGraph Certification](https://www.tigergraph.com/certification/tigergraph-certification-gsql-101/)
+
+Continue to the Environment Setup to get started with TigerGraph, FastAPI, Flutter and Firebase!
+
+![Architecture Diagram](../assets/setupSteps/architectureDiagram.png)
