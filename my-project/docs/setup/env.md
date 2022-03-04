@@ -29,14 +29,8 @@ flutter channel stable
 flutter upgrade
 ```
 
-And create and run a new Flutter project within the my-project directory. I named my flutter project `tg_flutter`.
+And create and run a new Flutter project within the `my-project directory`. I named my flutter project `tg_flutter`.
 
-```
-mkdir my-project
-```
-```
-cd my-project
-```
 ```
 flutter create tg_flutter
 ```
@@ -65,6 +59,8 @@ In the `my-project` directory, create a new directory to hold the goods for the 
 
 ```
 mkdir middleware
+```
+```
 cd middleware
 ```
 
