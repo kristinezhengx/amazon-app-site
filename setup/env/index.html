@@ -1163,12 +1163,53 @@ def read_root():
 <p>Now it's time to check out the endpoints that were just created! Enter <a href="https://127.0.0.1:8000">https://127.0.0.1:8000</a> in a browser page, and here you should find the {“Hello”: “World”} from the first function in the <code>main.py</code> file</p>
 <p>Enter <a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a> or <a href="http://127.0.0.1:8000/redoc">http://127.0.0.1:8000/redoc</a> to find interactive documentation for the endpoints we created. Thanks fastAPI!</p>
 <h2 id="firebase">Firebase</h2>
-<p>Sign into Firebase using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.</p>
+<p>Sign into <a href="https://console.firebase.google.com/u/0/">Firebase</a> using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.</p>
 <h3 id="create-firebase-project">Create Firebase Project</h3>
 <p>Once you have <a href="https://firebase.google.com/docs/web/setup#create-project">Created your Firebase Project</a>, you will be able to <a href="https://firebase.google.com/docs/web/setup#register-app">Register your project</a>!</p>
-<p>This is an example of my registration process:
+<p>This is an example of my registration process:</p>
+<ol>
+<li>
+<p>Click 'Create Project'
+<img alt="Firebase Registration" src="../../assets/firebase/firebase7.png" /></p>
+</li>
+<li>
+<p>Name your project
+<img alt="Firebase Registration" src="../../assets/firebase/firebase8.png" /></p>
+</li>
+<li>
+<p>Enable Google Analytics (optional)
+<img alt="Firebase Registration" src="../../assets/firebase/firebase9.png" /></p>
+</li>
+<li>
+<p>Click the final 'Create Project' once you have configured Google Analytics
+<img alt="Firebase Registration" src="../../assets/firebase/firebase10.png" /></p>
+</li>
+<li>
+<p>Click 'Continue' once you projected has finished provisioning
+<img alt="Firebase Registration" src="../../assets/firebase/firebase11.png" /></p>
+</li>
+<li>
+<p>Add a web app to your project by clicking the 'Web' icon from the Firebase console
 <img alt="Firebase Registration" src="../../assets/firebase/firebase1.png" /></p>
-<p><img alt="Firebase Registration" src="../../assets/firebase/firebase2.png" /></p>
+</li>
+<li>
+<p>Give your app a nickname and enable hosting (optional), then click 'Register App'
+<img alt="Firebase Registration" src="../../assets/firebase/firebase12.png" /></p>
+</li>
+<li>
+<p>Add Firebase SDK
+<img alt="Firebase Registration" src="../../assets/firebase/firebase13.png" />
+<strong>IMPORTANT NOTE: Save the above SDK configuration information as it will be important in adding the SDKs to our Flutter project! Do not copy and paste what is above (it is just a dummy example), your configuration will be specific to your project and app.</strong></p>
+</li>
+<li>
+<p>Install Firebase CLI (optional)
+<img alt="Firebase Registration" src="../../assets/firebase/firebase14.png" /></p>
+</li>
+<li>
+<p>Click 'Continue to Console' to finish adding the app to your project!
+<img alt="Firebase Registration" src="../../assets/firebase/firebase2.png" /></p>
+</li>
+</ol>
 <h3 id="add-firebase-sdks">Add Firebase SDKs</h3>
 <p>The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the <code>tg_flutter</code> project folder, located the <code>index.html</code> file. Add the <code>firebase-app.js</code> script to your <code>index.html</code> file:</p>
 <pre><code class="language-html">&lt;html&gt;
