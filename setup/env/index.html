@@ -1108,7 +1108,7 @@
 </code></pre>
 <pre><code>flutter upgrade
 </code></pre>
-<p>And create and run a new Flutter project within the <code>my-project directory</code>. I named my flutter project <code>tg_flutter</code>.</p>
+<p>And create and run a new Flutter project within the <code>my-project</code> directory. I named my flutter project <code>tg_flutter</code>.</p>
 <pre><code>flutter create tg_flutter
 </code></pre>
 <pre><code>cd tg_flutter
@@ -1158,7 +1158,7 @@ def read_root():
 <p>Save <code>main.py</code>, open an integrated terminal in VS Code, and run the following command to run the API.</p>
 <pre><code>uvicorn main:app --reload
 </code></pre>
-<p>This is using uvicorn to run our file. The file name is <code>main</code> and the <code>--reload</code> has the server automatically relaod after new changes are saved to the <code>main.py</code> file.</p>
+<p>This is using uvicorn to run our file. The file name is <code>main</code> and the <code>--reload</code> has the server automatically reload after new changes are saved to the <code>main.py</code> file.</p>
 <h3 id="explore-the-endpoints">Explore the Endpoints</h3>
 <p>Now it's time to check out the endpoints that were just created! Enter <a href="https://127.0.0.1:8000">https://127.0.0.1:8000</a> in a browser page, and here you should find the {“Hello”: “World”} from the first function in the <code>main.py</code> file</p>
 <p>Enter <a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a> or <a href="http://127.0.0.1:8000/redoc">http://127.0.0.1:8000/redoc</a> to find interactive documentation for the endpoints we created. Thanks fastAPI!</p>
@@ -1211,7 +1211,7 @@ def read_root():
 </li>
 </ol>
 <h3 id="add-firebase-sdks">Add Firebase SDKs</h3>
-<p>The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the <code>tg_flutter</code> project folder, located the <code>index.html</code> file. Add the <code>firebase-app.js</code> script to your <code>index.html</code> file:</p>
+<p>The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the <code>tg_flutter</code> project folder, located the <code>index.html</code> file. Add the <code>firebase-app.js</code> script to your <code>index.html</code> file within the <code>&lt;body&gt;</code> tag:</p>
 <pre><code class="language-html">&lt;html&gt;
   ...
   &lt;body&gt;
