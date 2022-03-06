@@ -223,7 +223,22 @@ onPressed: () {
                    },
                  )
 ```
-## JSON Resources and Sample Input
+## Sample Input
+Utilize the below sample input to test the TigerGraph Functionality
+
+User IDs
+- richard
+- nash
+- Johnnyblack
+- llyyue
+
+Product IDs
+- AVqVGZNvQMlgsOJE6eUY
+- AWFUWc8THh53nbDRF6YO
+- AVpftoij1cnluZ0-p5n2
+- AVpjEN4jLJeJML43rpUe
+
+## JSON Resources Sample Input
 
 JSON parsing in Flutter was the most difficult concept for me to grasp, so below are a few resources that helped me understand it better:
 

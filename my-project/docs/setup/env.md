@@ -29,7 +29,7 @@ flutter channel stable
 flutter upgrade
 ```
 
-And create and run a new Flutter project within the `my-project directory`. I named my flutter project `tg_flutter`.
+And create and run a new Flutter project within the `my-project` directory. I named my flutter project `tg_flutter`.
 
 ```
 flutter create tg_flutter
@@ -116,7 +116,7 @@ Save `main.py`, open an integrated terminal in VS Code, and run the following co
 uvicorn main:app --reload
 ```
 
-This is using uvicorn to run our file. The file name is `main` and the `--reload` has the server automatically relaod after new changes are saved to the `main.py` file.
+This is using uvicorn to run our file. The file name is `main` and the `--reload` has the server automatically reload after new changes are saved to the `main.py` file.
 
 ### Explore the Endpoints
 
@@ -168,7 +168,7 @@ This is an example of my registration process:
 ![Firebase Registration](../assets/firebase/firebase2.png)
 
 ### Add Firebase SDKs
-The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the `tg_flutter` project folder, located the `index.html` file. Add the `firebase-app.js` script to your `index.html` file:
+The only way to currently add the Firebase SDKs to your Flutter web project is by importing the scripts from the Firebase content delivery network (CDN). Inside the `tg_flutter` project folder, located the `index.html` file. Add the `firebase-app.js` script to your `index.html` file within the `<body>` tag:
 
 ```html
 <html>
