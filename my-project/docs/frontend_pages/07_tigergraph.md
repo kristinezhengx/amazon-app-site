@@ -227,12 +227,14 @@ onPressed: () {
 Utilize the below sample input to test the TigerGraph Functionality
 
 User IDs
+
 - richard
 - nash
 - Johnnyblack
 - llyyue
 
 Product IDs
+
 - AVqVGZNvQMlgsOJE6eUY
 - AWFUWc8THh53nbDRF6YO
 - AVpftoij1cnluZ0-p5n2
