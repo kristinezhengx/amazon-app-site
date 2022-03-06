@@ -126,14 +126,45 @@ Enter [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) or [http://127.0.
 
 ## Firebase
 
-Sign into Firebase using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.
+Sign into [Firebase](https://console.firebase.google.com/u/0/) using your Google account and follow the linked Google documentation to get started! In this section, the specfiic SDKs will be configured for our project.
 
 ### Create Firebase Project
 Once you have [Created your Firebase Project](https://firebase.google.com/docs/web/setup#create-project), you will be able to [Register your project](https://firebase.google.com/docs/web/setup#register-app)!
 
 This is an example of my registration process:
+
+1. Click 'Create Project'
+![Firebase Registration](../assets/firebase/firebase7.png)
+
+2. Name your project
+![Firebase Registration](../assets/firebase/firebase8.png)
+
+
+3. Enable Google Analytics (optional)
+![Firebase Registration](../assets/firebase/firebase9.png)
+
+
+4. Click the final 'Create Project' once you have configured Google Analytics
+![Firebase Registration](../assets/firebase/firebase10.png)
+
+
+5. Click 'Continue' once you projected has finished provisioning
+![Firebase Registration](../assets/firebase/firebase11.png)
+
+6. Add a web app to your project by clicking the 'Web' icon from the Firebase console
 ![Firebase Registration](../assets/firebase/firebase1.png)
 
+7. Give your app a nickname and enable hosting (optional), then click 'Register App'
+![Firebase Registration](../assets/firebase/firebase12.png)
+
+8. Add Firebase SDK
+![Firebase Registration](../assets/firebase/firebase13.png)
+**IMPORTANT NOTE: Save the above SDK configuration information as it will be important in adding the SDKs to our Flutter project! Do not copy and paste what is above (it is just a dummy example), your configuration will be specific to your project and app.**
+
+9. Install Firebase CLI (optional)
+![Firebase Registration](../assets/firebase/firebase14.png)
+
+10. Click 'Continue to Console' to finish adding the app to your project!
 ![Firebase Registration](../assets/firebase/firebase2.png)
 
 ### Add Firebase SDKs
