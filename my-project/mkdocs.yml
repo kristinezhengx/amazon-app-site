@@ -101,6 +101,7 @@ nav:
     - 'Cloud solution': tgcloud/tgcloud.md
     - 'GraphStudio' : tgcloud/graphstudio.md
     - 'Queries' : tgcloud/queries.md
+    - 'Import and Export' : tgcloud/importexport.md 
   - Middleware: middleware.md
   - Frontend:
     - 'Before We Get Started': 'frontend_pages/01_before.md'
