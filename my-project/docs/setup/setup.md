@@ -19,3 +19,7 @@ python --version
 Continue to the Environment Setup to get started with TigerGraph, FastAPI, Flutter and Firebase!
 
 ![Architecture Diagram](../assets/setupSteps/architectureDiagram.png)
+
+Once you have completed the project, the organization of files should look something like the below file tree.
+
+![File Tree](../assets/setupSteps/filetree.png)
