@@ -6,6 +6,8 @@ Read about TigerGraph's [query documentation](https://docs.tigergraph.com/gsql-r
 
 ## Relevant Examples:
 
+### General 
+
 * Finds all products under certain category
 ```sql
 CREATE QUERY productWithCategory(STRING CatID) FOR GRAPH ProductGraph { 
@@ -16,9 +18,10 @@ CREATE QUERY productWithCategory(STRING CatID) FOR GRAPH ProductGraph {
 }
 ```
 
+### Accumulators 
+These next two queries uses accumulators, a special type of variables that gather information about the graph during its traversal and exploration. 
 
-
-* Recommends product by reviewer username and the categories of products they have reviewed. This query uses accumulators, a special type of variables that gather information about the graph during its traversal and exploration. 
+* Recommends product by reviewer username and the categories of products they have reviewed. 
 ```sql
 CREATE QUERY recommendProd(STRING username, int k) FOR GRAPH ProductGraph SYNTAX V2{ 
   SetAccum<VERTEX> @@usedProd;
