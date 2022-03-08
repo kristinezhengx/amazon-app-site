@@ -1,6 +1,6 @@
 Creating navigation in Flutter is pretty straightforward. In Flutter, screens and pages are called routes. Create two routes, Navigate to the second route using Navigator.push(), and then return to the first route using Navigator.pop() and you will have two pages to display information! The Navigator.push() method adds a route to the stack of routes managed by navigator and the Navigator.pop() method removes the current route from the stack.
 
-In your empty `main.dart` file, paste the following code provided by the [Flutter Navigation docs](https://docs.google.com/document/d/1TB7ZxMQH2AZLN8t5jx1Y8KM7ak7Ra49BCS1bQWazKk4/edit?usp=sharing)
+In your empty `main.dart` file, paste the following code provided by the [Flutter Navigation docs](https://docs.flutter.dev/development/ui/navigation)
 
 ```dart
 import 'package:flutter/material.dart';
