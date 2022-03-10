@@ -1,6 +1,7 @@
 Now that we have our environment set up, our TG solution established, and our queries installed and ready to be utilized, let's set up our middleware!
 
 * Note: you should import our [compressed graph](https://github.com/mckenzie-steenson/amazon-app/blob/master/export_124632584.tar.gz) before following the middleware and frontend steps so you have the exact schema and queries in the tutorial!! 
+* Alternatively, use the [colab notebook](https://kristinezhengx.github.io/amazon-app-site/tgcloud/pytigergraph/)
 
 ## Connect to your TigerGraph Solution
 
