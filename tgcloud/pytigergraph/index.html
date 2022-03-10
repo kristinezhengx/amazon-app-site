@@ -13,7 +13,7 @@
     
     
       
-        <title>Queries - TigerGraph Full Stack Course with Flutter and Firebase</title>
+        <title>pyTigerGraph - TigerGraph Full Stack Course with Flutter and Firebase</title>
       
     
     
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#queries" class="md-skip">
+        <a href="#pytigergraph" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Queries
+              pyTigerGraph
             
           </span>
         </div>
@@ -527,72 +527,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Queries
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../queries/" class="md-nav__link">
         Queries
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-examples" class="md-nav__link">
-    Relevant Examples:
-  </a>
-  
-    <nav class="md-nav" aria-label="Relevant Examples:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    General
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accumulators" class="md-nav__link">
-    Accumulators
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -616,11 +555,21 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../pytigergraph/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         pyTigerGraph
       </a>
+      
     </li>
   
 
@@ -914,41 +863,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#relevant-examples" class="md-nav__link">
-    Relevant Examples:
-  </a>
-  
-    <nav class="md-nav" aria-label="Relevant Examples:">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#general" class="md-nav__link">
-    General
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#accumulators" class="md-nav__link">
-    Accumulators
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -960,61 +874,10 @@
               
                 
 
-<h1 id="queries">Queries!</h1>
-<p>After you finish creating your schema, mapping and loading data, and exploring, you are ready to use queries to analyze, update, and compute information from the graph! Move to the Write Queries part of the side bar to start. </p>
-<p>Read about TigerGraph's <a href="https://docs.tigergraph.com/gsql-ref/current/querying/query-operations">query documentation</a></p>
-<h2 id="relevant-examples">Relevant Examples:</h2>
-<h3 id="general">General</h3>
-<ul>
-<li>Finds all products under certain category</li>
-</ul>
-<pre><code class="language-sql">CREATE QUERY productWithCategory(STRING CatID) FOR GRAPH ProductGraph { 
-  prod = {Product.*}; // get all products into a set
-
-  results = SELECT p FROM prod:p -(PRODUCT_HAS_CATEGORY)-&gt; Category:c WHERE c.id == CatID;
-  PRINT CatID, results;
-}
-</code></pre>
-<h3 id="accumulators">Accumulators</h3>
-<p>These next two queries uses accumulators, a special type of variables that gather information about the graph during its traversal and exploration. </p>
-<ul>
-<li>Recommends product by reviewer username and the categories of products they have reviewed. </li>
-</ul>
-<pre><code class="language-sql">CREATE QUERY recommendProd(STRING username, int k) FOR GRAPH ProductGraph SYNTAX V2{ 
-  SetAccum&lt;VERTEX&gt; @@usedProd;
-  prod = {Product.*};
-
-  vset1 = SELECT p FROM User:u-(USER_REVIEWS_PRODUCT&gt;:e1)-prod:p-(PRODUCT_HAS_CATEGORY&gt;:e2)-Category-(reverse_PRODUCT_HAS_CATEGORY&gt;:e3)-prod:p
-        WHERE u.id == username
-        ACCUM @@usedProd += p;
-  PRINT vset1;
-}
-</code></pre>
-<ul>
-<li>Recommends products for a user based highest average rating and number of reviews. </li>
-</ul>
-<pre><code class="language-sql">CREATE QUERY recommender(STRING username, int k) FOR GRAPH ProductGraph RETURNS (SET&lt;VERTEX&gt;) SYNTAX v2 { 
-  SetAccum&lt;VERTEX&gt; @@usedProd;
-  AvgAccum @avgRating;
-  SumAccum&lt;INT&gt; @numRating;
-  prod = {Product.*};
-
-  vset1 = SELECT p FROM prod:p-(reverse_USER_REVIEWS_PRODUCT&gt;:e)- User
-           ACCUM p.@avgRating += e.rating, p.@numRating +=1;
-
-  vset2 = SELECT p FROM User:u-(USER_REVIEWS_PRODUCT&gt;:e1)-prod:p1-(PRODUCT_HAS_CATEGORY&gt;:e2)-Category-(reverse_PRODUCT_HAS_CATEGORY&gt;:e3)-vset1:p
-        WHERE u.id == username
-        ACCUM @@usedProd += p1;
-
- result = SELECT v FROM vset2:v-(reverse_USER_REVIEWS_PRODUCT&gt;:e)-User
-          Where v not in @@usedProd
-          ORDER BY v.@avgRating DESC, v.@numRating DESC
-          LIMIT k;
-
-  PRINT result[result.name, result.@avgRating, result.@numRating]; 
-  RETURN result;
-}
-</code></pre>
+<h1 id="pytigergraph">pyTigerGraph</h1>
+<p>Instead of using the GraphStudio GUI, you can also use the <a href="https://pytigergraph.github.io/pyTigerGraph/GettingStarted/">pyTigerGraph library</a> to create the schema, load data, and write and install queries. </p>
+<p>See this <a href="https://colab.research.google.com/drive/1iikZfPBzjFyi444kRW9CdHkuUYfWY5r_?usp=sharing">colab notebook</a>
+* If you use this, make sure to change the graph name and host link to match your solution from tgcloud. Also, remember to download and unzip this <a href="https://github.com/mckenzie-steenson/amazon-app/blob/master/Amazon_Products_Reviews.csv.zip">data file</a> to upload into the colab notebook.</p>
 
               
             </article>
@@ -1033,7 +896,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../graphstudio/" class="md-footer__link md-footer__link--prev" aria-label="Previous: GraphStudio" rel="prev">
+        <a href="../importexport/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Import and Export" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1042,20 +905,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              GraphStudio
+              Import and Export
             </div>
           </div>
         </a>
       
       
         
-        <a href="../importexport/" class="md-footer__link md-footer__link--next" aria-label="Next: Import and Export" rel="next">
+        <a href="../../middleware/" class="md-footer__link md-footer__link--next" aria-label="Next: Middleware" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Import and Export
+              Middleware
             </div>
           </div>
           <div class="md-footer__button md-icon">
